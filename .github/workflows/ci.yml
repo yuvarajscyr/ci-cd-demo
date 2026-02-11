@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/cicd-demo:latest .
+        run: docker build -t ${{ vars.DOCKERHUB_USERNAME }}/cicd-demo:latest .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/cicd-demo:latest
+        run: docker push ${{ vars.DOCKERHUB_USERNAME }}/cicd-demo:latest
